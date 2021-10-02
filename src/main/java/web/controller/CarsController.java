@@ -20,16 +20,19 @@ public class CarsController {
         this.carDao = carDao;
     }
 
+
     @GetMapping()
     public String listCar(Model model) {
         model.addAttribute("cars", carDao.listCars());
+        System.out.println("все");
+        System.out.println(carDao.showCars(1));
         return "cars";
     }
 //    @GetMapping()
-//    public String showCars(@RequestParam(value = "count",required = false) Integer count, Model model) {
+//    public String showCars(@RequestParam(value = "count",required = false) int count, Model model) {
 //
-//        model.addAttribute("message","hello"+ count);
-//   // System.out.println("hello"+ count);
-//        return "cars";
+//        // model.addAttribute("cars",carDao.showCars(count));
+//    System.out.println(carDao.showCars(count));
+//        return null;
 //    }
 }
