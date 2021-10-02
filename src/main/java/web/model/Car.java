@@ -24,16 +24,7 @@ public class Car {
         return series;
     }
 
-    @Override
-    public String toString() {
-        return "Car{" +
-                "model='" + model  +
-                ", color='" + color +
-                ", series='" + series + '\'' +
-                '}';
-    }
-
-    public Car() {
+      public Car() {
     }
 
 

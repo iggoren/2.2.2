@@ -6,17 +6,17 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import web.dao.CarDao;
+import web.dao.CarDaoImpl;
 
 
 @Controller
 @RequestMapping("/cars")
 public class CarsController {
 
-    private final CarDao carDao;
+    private final CarDaoImpl carDao;
 
     @Autowired
-    public CarsController(CarDao carDao) {
+    public CarsController(CarDaoImpl carDao) {
         this.carDao = carDao;
     }
 
