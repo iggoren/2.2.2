@@ -12,6 +12,18 @@ public class Car {
         this.series = series;
     }
 
+    public String getModel() {
+        return model;
+    }
+
+    public String getColor() {
+        return color;
+    }
+
+    public String getSeries() {
+        return series;
+    }
+
     @Override
     public String toString() {
         return "Car{" +
