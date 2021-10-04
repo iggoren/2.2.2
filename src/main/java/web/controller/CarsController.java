@@ -6,26 +6,26 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import web.dao.CarDaoImpl;
+import web.service.CarService;
 
 
 @Controller
 @RequestMapping("/cars")
 public class CarsController {
 
-    private final CarDaoImpl carDao;
+    private final CarService carService;
 
     @Autowired
-    public CarsController(CarDaoImpl carDao) {
-        this.carDao = carDao;
-    }
+    public CarsController(CarService carService) {
+        this.carService = carService;
+            }
 
     @GetMapping()
     public String showListCar(@RequestParam(value = "count", required = false) Integer count, Model model) {
         if (count == null || count >= 5) {
-            model.addAttribute("cars", carDao.listCars());
+            model.addAttribute("cars", carService.listCars());
         } else {
-            model.addAttribute("cars", carDao.showCars(count));
+            model.addAttribute("cars", carService.showCars(count));
         }
         return "cars";
     }
